@@ -13,7 +13,6 @@ import java.util.Set;
 import com.google.gson.JsonElement;
 
 import net.wurstclient.clickgui.Component;
-import net.wurstclient.keybinds.PossibleKeybind;
 
 public abstract class Setting
 {
@@ -46,7 +45,4 @@ public abstract class Setting
 	{
 		
 	}
-	
-	public abstract Set<PossibleKeybind> getPossibleKeybinds(
-		String featureName);
 }

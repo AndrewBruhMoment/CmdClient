@@ -21,7 +21,6 @@ public final class CmdList
 	public final AnnoyCmd annoyCmd = new AnnoyCmd();
 	public final AuthorCmd authorCmd = new AuthorCmd();
 	public final BindCmd bindCmd = new BindCmd();
-	public final BindsCmd bindsCmd = new BindsCmd();
 	public final ClearCmd clearCmd = new ClearCmd();
 	public final CopyItemCmd copyitemCmd = new CopyItemCmd();
 	public final DamageCmd damageCmd = new DamageCmd();
@@ -29,7 +28,6 @@ public final class CmdList
 	public final EnabledHaxCmd enabledHaxCmd = new EnabledHaxCmd();
 	public final EnchantCmd enchantCmd = new EnchantCmd();
 	public final FeaturesCmd featuresCmd = new FeaturesCmd();
-	public final FriendsCmd friendsCmd = new FriendsCmd();
 	public final GetPosCmd getPosCmd = new GetPosCmd();
 	public final GiveCmd giveCmd = new GiveCmd();
 	public final GmCmd gmCmd = new GmCmd();

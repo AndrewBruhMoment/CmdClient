@@ -27,7 +27,6 @@ public abstract class Hack extends Feature
 	{
 		this.name = Objects.requireNonNull(name);
 		this.description = Objects.requireNonNull(description);
-		addPossibleKeybind(name, "Toggle " + name);
 	}
 	
 	@Override

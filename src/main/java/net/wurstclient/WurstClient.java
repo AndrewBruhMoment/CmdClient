@@ -37,8 +37,6 @@ import net.wurstclient.events.PreMotionListener;
 import net.wurstclient.events.UpdateListener;
 import net.wurstclient.hack.Hack;
 import net.wurstclient.hack.HackList;
-import net.wurstclient.keybinds.KeybindList;
-import net.wurstclient.keybinds.KeybindProcessor;
 import net.wurstclient.mixinterface.IMinecraftClient;
 import net.wurstclient.other_feature.OtfList;
 import net.wurstclient.other_feature.OtherFeature;
@@ -64,10 +62,8 @@ public enum WurstClient
 	private OtfList otfs;
 	private SettingsFile settingsFile;
 	private Path settingsProfileFolder;
-	private KeybindList keybinds;
 	private CmdProcessor cmdProcessor;
 	private RotationFaker rotationFaker;
-	private FriendsList friends;
 	
 	private boolean enabled = true;
 	private static boolean guiInitialized;
@@ -102,21 +98,9 @@ public enum WurstClient
 		this.settingsFile.load();
 		hax.tooManyHaxHack.loadBlockedHacksFile();
 		
-		Path keybindsFile = wurstFolder.resolve("keybinds.json");
-		keybinds = new KeybindList(keybindsFile);
-		
-		
-		Path friendsFile = wurstFolder.resolve("friends.json");
-		friends = new FriendsList(friendsFile);
-		friends.load();
-		
 		cmdProcessor = new CmdProcessor(cmds);
 		eventManager.add(ChatOutputListener.class, cmdProcessor);
-		
-		KeybindProcessor keybindProcessor =
-			new KeybindProcessor(hax, keybinds, cmdProcessor);
-		eventManager.add(KeyPressListener.class, keybindProcessor);
-				
+						
 		rotationFaker = new RotationFaker();
 		eventManager.add(PreMotionListener.class, rotationFaker);
 		eventManager.add(PostMotionListener.class, rotationFaker);
@@ -261,12 +245,7 @@ public enum WurstClient
 		return null;
 	}
 	
-	public KeybindList getKeybinds()
-	{
-		return keybinds;
-	}
-	
-	
+
 	public CmdProcessor getCmdProcessor()
 	{
 		return cmdProcessor;
@@ -275,11 +254,6 @@ public enum WurstClient
 	public RotationFaker getRotationFaker()
 	{
 		return rotationFaker;
-	}
-	
-	public FriendsList getFriends()
-	{
-		return friends;
 	}
 	
 	public boolean isEnabled()

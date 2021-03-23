@@ -15,7 +15,6 @@ import java.util.Set;
 
 import net.minecraft.client.MinecraftClient;
 import net.wurstclient.event.EventManager;
-import net.wurstclient.keybinds.PossibleKeybind;
 import net.wurstclient.mixinterface.IMinecraftClient;
 import net.wurstclient.settings.Setting;
 
@@ -28,8 +27,6 @@ public abstract class Feature
 	
 	private final LinkedHashMap<String, Setting> settings =
 		new LinkedHashMap<>();
-	private final LinkedHashSet<PossibleKeybind> possibleKeybinds =
-		new LinkedHashSet<>();
 	
 	private final String searchTags =
 		getClass().isAnnotationPresent(SearchTags.class) ? String.join("\u00a7",
@@ -72,18 +69,6 @@ public abstract class Feature
 			throw new IllegalArgumentException(
 				"Duplicate setting: " + getName() + " " + key);
 		
-		settings.put(key, setting);
-		possibleKeybinds.addAll(setting.getPossibleKeybinds(getName()));
-	}
-	
-	protected final void addPossibleKeybind(String command, String description)
-	{
-		possibleKeybinds.add(new PossibleKeybind(command, description));
-	}
-	
-	public final Set<PossibleKeybind> getPossibleKeybinds()
-	{
-		return Collections.unmodifiableSet(possibleKeybinds);
 	}
 	
 	public final String getSearchTags()

@@ -17,14 +17,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import com.mojang.authlib.GameProfile;
 
-import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.client.network.ClientPlayNetworkHandler;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.MovementType;
-import net.minecraft.entity.effect.StatusEffect;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.network.packet.c2s.play.ChatMessageC2SPacket;
 import net.minecraft.util.math.Vec3d;
 import net.wurstclient.WurstClient;
@@ -91,8 +88,6 @@ public class ClientPlayerEntityMixin extends AbstractClientPlayerEntity
 		ordinal = 0), method = "tickMovement()V")
 	private boolean wurstIsUsingItem(ClientPlayerEntity player)
 	{
-
-		
 		return player.isUsingItem();
 	}
 	
@@ -122,19 +117,7 @@ public class ClientPlayerEntityMixin extends AbstractClientPlayerEntity
 		cancellable = true)
 	private void onIsAutoJumpEnabled(CallbackInfoReturnable<Boolean> cir)
 	{
-
-	}
-	
-	@Redirect(
-		at = @At(value = "INVOKE",
-			target = "Lnet/minecraft/client/gui/screen/Screen;isPauseScreen()Z",
-			ordinal = 0),
-		method = {"updateNausea()V"})
-	private boolean onUpdateNausea(Screen screen)
-	{
-
-		
-		return screen.isPauseScreen();
+		cir.setReturnValue(false);
 	}
 	
 	@Override
@@ -165,24 +148,12 @@ public class ClientPlayerEntityMixin extends AbstractClientPlayerEntity
 	protected float getJumpVelocity()
 	{
 		return super.getJumpVelocity();
-			
 	}
 	
 	@Override
 	protected boolean clipAtLedge()
 	{
 		return super.clipAtLedge();
-				
-	}
-	
-	@Override
-	public boolean hasStatusEffect(StatusEffect effect)
-	{
-		
-		if(effect == StatusEffects.NIGHT_VISION)
-			return true;
-		
-		return super.hasStatusEffect(effect);
 	}
 	
 	@Override

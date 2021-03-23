@@ -23,11 +23,10 @@ import com.google.gson.JsonPrimitive;
 
 import net.wurstclient.WurstClient;
 import net.wurstclient.clickgui.Component;
-import net.wurstclient.keybinds.PossibleKeybind;
 import net.wurstclient.util.json.JsonException;
 import net.wurstclient.util.json.JsonUtils;
 
-public final class FileSetting extends Setting
+public abstract class FileSetting extends Setting
 {
 	private final Path folder;
 	private String selectedFile = "";
@@ -131,7 +130,7 @@ public final class FileSetting extends Setting
 			throw new RuntimeException(e);
 		}
 	}
-	
+
 	@Override
 	public void fromJson(JsonElement json)
 	{
@@ -154,17 +153,5 @@ public final class FileSetting extends Setting
 	public JsonElement toJson()
 	{
 		return new JsonPrimitive(selectedFile);
-	}
-	
-	@Override
-	public Set<PossibleKeybind> getPossibleKeybinds(String featureName)
-	{
-		return new LinkedHashSet<>();
-	}
-
-	@Override
-	public Component getComponent() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 }

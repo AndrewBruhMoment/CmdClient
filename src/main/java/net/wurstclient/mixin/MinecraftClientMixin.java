@@ -90,7 +90,6 @@ public abstract class MinecraftClientMixin
 			return;
 		
 		Entity entity = ((EntityHitResult)hitResult).getEntity();
-		WurstClient.INSTANCE.getFriends().middleClick(entity);
 	}
 	
 	@Inject(at = {@At("HEAD")},

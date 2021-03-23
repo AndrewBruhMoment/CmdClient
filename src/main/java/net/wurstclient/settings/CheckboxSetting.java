@@ -15,10 +15,9 @@ import com.google.gson.JsonPrimitive;
 
 import net.wurstclient.WurstClient;
 import net.wurstclient.clickgui.Component;
-import net.wurstclient.keybinds.PossibleKeybind;
 import net.wurstclient.util.json.JsonUtils;
 
-public class CheckboxSetting extends Setting implements CheckboxLock
+public abstract class CheckboxSetting extends Setting implements CheckboxLock
 {
 	private boolean checked;
 	private final boolean checkedByDefault;
@@ -93,27 +92,5 @@ public class CheckboxSetting extends Setting implements CheckboxLock
 	public final JsonElement toJson()
 	{
 		return new JsonPrimitive(checked);
-	}
-	
-	@Override
-	public final Set<PossibleKeybind> getPossibleKeybinds(String featureName)
-	{
-		String fullName = featureName + " " + getName();
-		
-		String command = ".setcheckbox " + featureName.toLowerCase() + " ";
-		command += getName().toLowerCase().replace(" ", "_") + " ";
-		
-		LinkedHashSet<PossibleKeybind> pkb = new LinkedHashSet<>();
-		pkb.add(new PossibleKeybind(command + "toggle", "Toggle " + fullName));
-		pkb.add(new PossibleKeybind(command + "on", "Check " + fullName));
-		pkb.add(new PossibleKeybind(command + "off", "Uncheck " + fullName));
-		
-		return pkb;
-	}
-
-	@Override
-	public Component getComponent() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 }

@@ -18,12 +18,11 @@ import net.minecraft.block.AirBlock;
 import net.minecraft.block.Block;
 import net.wurstclient.WurstClient;
 import net.wurstclient.clickgui.Component;
-import net.wurstclient.keybinds.PossibleKeybind;
 import net.wurstclient.util.BlockUtils;
 import net.wurstclient.util.json.JsonException;
 import net.wurstclient.util.json.JsonUtils;
 
-public final class BlockSetting extends Setting
+public abstract class BlockSetting extends Setting
 {
 	private String blockName = "";
 	private final String defaultName;
@@ -88,7 +87,6 @@ public final class BlockSetting extends Setting
 		WurstClient.INSTANCE.saveSettings();
 	}
 	
-
 	@Override
 	public void fromJson(JsonElement json)
 	{
@@ -116,17 +114,5 @@ public final class BlockSetting extends Setting
 	public JsonElement toJson()
 	{
 		return new JsonPrimitive(blockName);
-	}
-	
-	@Override
-	public Set<PossibleKeybind> getPossibleKeybinds(String featureName)
-	{
-		return new LinkedHashSet<>();
-	}
-
-	@Override
-	public Component getComponent() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 }

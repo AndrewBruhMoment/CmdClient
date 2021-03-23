@@ -23,7 +23,6 @@ public final class OtfList
 	public final LastServerOtf lastServerOtf = new LastServerOtf();
 	public final ReconnectOtf reconnectOtf = new ReconnectOtf();
 	public final ServerFinderOtf serverFinderOtf = new ServerFinderOtf();
-	public final VanillaSpoofOtf vanillaSpoofOtf = new VanillaSpoofOtf();
 	public final WurstCapesOtf wurstCapesOtf = new WurstCapesOtf();
 	
 	private final TreeMap<String, OtherFeature> otfs =

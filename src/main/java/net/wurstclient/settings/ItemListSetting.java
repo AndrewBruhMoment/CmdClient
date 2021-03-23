@@ -23,12 +23,11 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.wurstclient.WurstClient;
 import net.wurstclient.clickgui.Component;
-import net.wurstclient.keybinds.PossibleKeybind;
 import net.wurstclient.util.json.JsonException;
 import net.wurstclient.util.json.JsonUtils;
 import net.wurstclient.util.json.WsonArray;
 
-public final class ItemListSetting extends Setting
+public abstract class ItemListSetting extends Setting
 {
 	private final ArrayList<String> itemNames = new ArrayList<>();
 	private final String[] defaultNames;
@@ -104,17 +103,5 @@ public final class ItemListSetting extends Setting
 		JsonArray json = new JsonArray();
 		itemNames.forEach(s -> json.add(s));
 		return json;
-	}
-	
-	@Override
-	public Set<PossibleKeybind> getPossibleKeybinds(String featureName)
-	{
-		return new LinkedHashSet<>();
-	}
-
-	@Override
-	public Component getComponent() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 }
