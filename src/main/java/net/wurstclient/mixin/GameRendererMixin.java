@@ -66,13 +66,6 @@ public abstract class GameRendererMixin
 		EventManager.fire(event);
 	}
 	
-	@Redirect(
-		at = @At(value = "FIELD",
-			target = "Lnet/minecraft/client/options/GameOptions;fov:D",
-			opcode = Opcodes.GETFIELD,
-			ordinal = 0),
-		method = {"getFov(Lnet/minecraft/client/render/Camera;FZ)D"})
-
 	@Inject(at = {@At(value = "INVOKE",
 		target = "Lnet/minecraft/entity/Entity;getCameraPosVec(F)Lnet/minecraft/util/math/Vec3d;",
 		opcode = Opcodes.INVOKEVIRTUAL,
@@ -91,7 +84,7 @@ public abstract class GameRendererMixin
 			"renderWorld(FJLnet/minecraft/client/util/math/MatrixStack;)V"})
 	private float wurstNauseaLerp(float delta, float first, float second)
 	{
-		return MathHelper.lerp(delta, first, second);
+		return 0;
 	}
 	
 	@Inject(at = {@At("HEAD")},
@@ -101,6 +94,7 @@ public abstract class GameRendererMixin
 	private static void onGetNightVisionStrength(LivingEntity livingEntity,
 		float f, CallbackInfoReturnable<Float> cir)
 	{
+
 	}
 	
 	@Inject(at = {@At("HEAD")},
@@ -110,7 +104,7 @@ public abstract class GameRendererMixin
 	private void onBobViewWhenHurt(MatrixStack matrixStack, float f,
 		CallbackInfo ci)
 	{
-			ci.cancel();
+		ci.cancel();
 	}
 	
 	@Shadow

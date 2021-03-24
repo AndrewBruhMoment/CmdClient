@@ -1,8 +1,8 @@
-# Wurst Client v7
+# Cmd Client v0.2
 
 ## Downloads (for users)
 
-https://www.wurstclient.net/download/
+This project is not finnished.
 
 ## Setup (for developers) (using Windows 10 & Eclipse)
 
@@ -20,6 +20,8 @@ https://www.wurstclient.net/download/
 This code is licensed under the GNU General Public License v3. **You can only use this code in open-source clients that you release under the same license! Using it in closed-source/proprietary clients is not allowed!**
 
 ## Note about Pull Requests
+
+Please do not make pull requests while client is still in development.
 
 If you are contributing multiple unrelated features, please create a separate pull request for each feature. Squeezing everything into one giant pull request makes it very difficult for us to add your features, as we have to test, validate and add them one by one.
 

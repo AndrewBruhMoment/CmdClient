@@ -83,7 +83,6 @@ public class AbstractBlockStateMixin extends State<Block, BlockState>
 		if(hax == null)
 			return;
 		
-		
-		cir.setReturnValue(VoxelShapes.empty());
+			return;
 	}
 }

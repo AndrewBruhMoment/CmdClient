@@ -17,11 +17,14 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import com.mojang.authlib.GameProfile;
 
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.client.network.ClientPlayNetworkHandler;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.MovementType;
+import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.network.packet.c2s.play.ChatMessageC2SPacket;
 import net.minecraft.util.math.Vec3d;
 import net.wurstclient.WurstClient;
@@ -120,6 +123,16 @@ public class ClientPlayerEntityMixin extends AbstractClientPlayerEntity
 		cir.setReturnValue(false);
 	}
 	
+	@Redirect(
+		at = @At(value = "INVOKE",
+			target = "Lnet/minecraft/client/gui/screen/Screen;isPauseScreen()Z",
+			ordinal = 0),
+		method = {"updateNausea()V"})
+	private boolean onUpdateNausea(Screen screen)
+	{
+		return true;
+	}
+	
 	@Override
 	public void setVelocityClient(double x, double y, double z)
 	{
@@ -155,6 +168,7 @@ public class ClientPlayerEntityMixin extends AbstractClientPlayerEntity
 	{
 		return super.clipAtLedge();
 	}
+	
 	
 	@Override
 	public void setNoClip(boolean noClip)

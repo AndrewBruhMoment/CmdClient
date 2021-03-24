@@ -27,7 +27,7 @@ public class InGameOverlayRendererMixin
 	private static void onRenderFireOverlay(MinecraftClient minecraftClient,
 		MatrixStack matrixStack, CallbackInfo ci)
 	{
-			ci.cancel();
+		ci.cancel();
 	}
 	
 	@Inject(at = {@At("HEAD")},
@@ -38,6 +38,6 @@ public class InGameOverlayRendererMixin
 		MinecraftClient minecraftClient, MatrixStack matrixStack,
 		CallbackInfo ci)
 	{
-			ci.cancel();
+		ci.cancel();
 	}
 }

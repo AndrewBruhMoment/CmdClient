@@ -39,8 +39,7 @@ public abstract class EntityRendererMixin<T extends Entity>
 	private void onRenderLabelIfPresent(T entity, Text text,
 		MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider,
 		int i, CallbackInfo ci)
-	{
-		
+	{	
 		wurstRenderLabelIfPresent(entity, text, matrixStack,
 			vertexConsumerProvider, i);
 		ci.cancel();
@@ -68,6 +67,11 @@ public abstract class EntityRendererMixin<T extends Entity>
 		matrixStack.multiply(this.dispatcher.getRotation());
 		
 		float scale = 0.025F;
+		
+		double distance = WurstClient.MC.player.distanceTo(entity);
+			
+		if(distance > 10)
+			scale *= distance / 10;
 		
 		matrixStack.scale(-scale, -scale, scale);
 		

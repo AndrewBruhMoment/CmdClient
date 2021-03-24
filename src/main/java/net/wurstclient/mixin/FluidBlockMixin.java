@@ -33,8 +33,7 @@ public abstract class FluidBlockMixin extends Block implements FluidDrainable
 	public VoxelShape getCollisionShape(BlockState blockState_1,
 		BlockView blockView_1, BlockPos blockPos_1,
 		ShapeContext entityContext_1)
-	{
-		
+	{			
 		return super.getCollisionShape(blockState_1, blockView_1, blockPos_1,
 			entityContext_1);
 	}

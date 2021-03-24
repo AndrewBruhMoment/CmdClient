@@ -33,6 +33,6 @@ public class ChatScreenMixin extends Screen
 	@Inject(at = {@At("TAIL")}, method = {"init()V"})
 	protected void onInit(CallbackInfo ci)
 	{
-
+		chatField.setMaxLength(Integer.MAX_VALUE);
 	}
 }

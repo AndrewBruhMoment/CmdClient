@@ -20,13 +20,13 @@ public enum ChatUtils
 	private static final MinecraftClient MC = WurstClient.MC;
 	
 	public static final String WURST_PREFIX =
-		"\u00a70[\u00a7a\u00a7nCmd\u00a7r\u00a70]\u00a7r ";
+		"\u00a70[\u00a7f[\u00a72\u00a7nCmd\u00a7r\u00a7f]\u00a70]\u00a7r ";
 	private static final String WARNING_PREFIX =
-		"\u00a70[\u00a7c\u00a7lWARNING\u00a70]\u00a7r ";
+		"\u00a7f[\u00a7a\u00a7lWARNING\u00a7f]\u00a7r ";
 	private static final String ERROR_PREFIX =
-		"\u00a70[\u00a74\u00a7lERROR\u00a70]\u00a7r ";
+		"\u00a70[\u00a7f[\u00a74\u00a7lERROR\u00a7f]\u00a70]\u00a7r ";
 	private static final String SYNTAX_ERROR_PREFIX =
-		"\u00a72Syntax error:\u00a7r ";
+		"\u00a7aSyntax error:\u00a7r ";
 	
 	private static boolean enabled = true;
 	

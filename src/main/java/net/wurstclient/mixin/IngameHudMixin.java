@@ -42,6 +42,6 @@ public class IngameHudMixin extends DrawableHelper
 		cancellable = true)
 	private void onRenderPumpkinOverlay(CallbackInfo ci)
 	{
-			ci.cancel();
+		ci.cancel();
 	}
 }

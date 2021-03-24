@@ -30,5 +30,6 @@ public abstract class RenderTickCounterMixin
 	public void onBeginRenderTick(long long_1,
 		CallbackInfoReturnable<Integer> cir)
 	{
+		lastFrameDuration *= 1;
 	}
 }

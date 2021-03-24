@@ -24,7 +24,7 @@ public abstract class WorldMixin implements WorldAccess, AutoCloseable
 		cancellable = true)
 	private void onGetRainGradient(float f, CallbackInfoReturnable<Float> cir)
 	{
-		cir.setReturnValue(0F);
+		return;
 	}
 	
 	// getSkyAngle
@@ -32,15 +32,15 @@ public abstract class WorldMixin implements WorldAccess, AutoCloseable
 	public float getSkyAngle(float tickDelta)
 	{
 		
-		long timeOfDay = getLevelProperties().getTimeOfDay();
+		long timeOfDay =
+				getLevelProperties().getTimeOfDay();
 		
 		return getDimension().getSkyAngle(timeOfDay);
 	}
 	
 	@Override
 	public int getMoonPhase()
-	{
-		
+	{	
 		return getDimension().getMoonPhase(getLunarTime());
 	}
 }

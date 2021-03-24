@@ -26,7 +26,7 @@ public abstract class CameraMixin
 	private void onClipToSpace(double desiredCameraDistance,
 		CallbackInfoReturnable<Double> cir)
 	{
-
+		cir.setReturnValue(desiredCameraDistance);
 	}
 	
 	@Inject(at = {@At("HEAD")},
@@ -34,6 +34,6 @@ public abstract class CameraMixin
 		cancellable = true)
 	private void getSubmergedFluidState(CallbackInfoReturnable<FluidState> cir)
 	{
-
+		cir.setReturnValue(Fluids.EMPTY.getDefaultState());
 	}
 }

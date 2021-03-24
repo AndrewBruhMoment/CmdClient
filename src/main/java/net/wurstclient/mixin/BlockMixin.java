@@ -45,8 +45,9 @@ public abstract class BlockMixin implements ItemConvertible
 		cancellable = true)
 	private void onGetVelocityMultiplier(CallbackInfoReturnable<Float> cir)
 	{
-		
 		if(cir.getReturnValueF() < 1)
 			cir.setReturnValue(1F);
+		
+			return;
 	}
 }
