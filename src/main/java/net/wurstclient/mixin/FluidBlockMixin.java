@@ -18,13 +18,13 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
-import net.wurstclient.WurstClient;
+import net.wurstclient.CmdClient;
 import net.wurstclient.hack.HackList;
 
 @Mixin(FluidBlock.class)
 public abstract class FluidBlockMixin extends Block implements FluidDrainable
 {
-	private FluidBlockMixin(WurstClient wurst, Settings block$Settings_1)
+	private FluidBlockMixin(CmdClient wurst, Settings block$Settings_1)
 	{
 		super(block$Settings_1);
 	}

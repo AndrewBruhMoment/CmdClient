@@ -9,7 +9,7 @@ package net.wurstclient;
 
 import net.fabricmc.api.ModInitializer;
 
-public final class WurstInitializer implements ModInitializer
+public final class CmdInitializer implements ModInitializer
 {
 	private static boolean initialized;
 	
@@ -22,9 +22,9 @@ public final class WurstInitializer implements ModInitializer
 		
 		if(initialized)
 			throw new RuntimeException(
-				"WurstInitializer.onInitialize() ran twice!");
+				"CmdInitializer.onInitialize() ran twice!");
 		
-		WurstClient.INSTANCE.initialize();
+		CmdClient.INSTANCE.initialize();
 		initialized = true;
 	}
 }

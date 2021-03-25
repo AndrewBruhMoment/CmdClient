@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
-  "id": "wurst",
+  "id": "cmdclient",
   "version": "${version}",
 
-  "name": "Wurst Client",
-  "description": "Wurst Wurst Wurst!",
+  "name": "Cmd Client",
+  "description": "CmdClient is a client based on Wurst that utilizes the command system only.",
   "authors": [
-    "Alexander01998"
+    "BOB225225, (Original: Wurst)"
   ],
   "contact": {
-    "homepage": "https://www.wurstclient.net/",
-    "sources": "https://www.wurstclient.net/github/"
+    "homepage": "https://www.andrewbruhmoment.github.io/",
+    "sources": "Comming Soon"
   },
 
   "license": "GPL-3.0-or-later",
@@ -19,11 +19,11 @@
   "environment": "client",
   "entrypoints": {
     "main": [
-      "net.wurstclient.WurstInitializer"
+      "net.wurstclient.CmdInitializer"
     ]
   },
   "mixins": [
-    "wurst.mixins.json"
+    "cmd.mixins.json"
   ],
 
   "depends": {

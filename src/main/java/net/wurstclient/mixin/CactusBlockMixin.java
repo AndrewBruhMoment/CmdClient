@@ -19,14 +19,14 @@ import net.minecraft.block.ShapeContext;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
-import net.wurstclient.WurstClient;
+import net.wurstclient.CmdClient;
 import net.wurstclient.event.EventManager;
 import net.wurstclient.events.CactusCollisionShapeListener.CactusCollisionShapeEvent;
 
 @Mixin(CactusBlock.class)
 public abstract class CactusBlockMixin extends Block
 {
-	private CactusBlockMixin(WurstClient wurst, Settings block$Settings_1)
+	private CactusBlockMixin(CmdClient wurst, Settings block$Settings_1)
 	{
 		super(block$Settings_1);
 	}

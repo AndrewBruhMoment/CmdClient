@@ -17,7 +17,7 @@ import net.minecraft.client.gui.screen.ChatScreen;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.text.Text;
-import net.wurstclient.WurstClient;
+import net.wurstclient.CmdClient;
 
 @Mixin(ChatScreen.class)
 public class ChatScreenMixin extends Screen
@@ -25,7 +25,7 @@ public class ChatScreenMixin extends Screen
 	@Shadow
 	protected TextFieldWidget chatField;
 	
-	private ChatScreenMixin(WurstClient wurst, Text text_1)
+	private ChatScreenMixin(CmdClient wurst, Text text_1)
 	{
 		super(text_1);
 	}

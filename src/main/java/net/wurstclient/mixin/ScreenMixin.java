@@ -18,7 +18,7 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.TickableElement;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.network.packet.c2s.play.ChatMessageC2SPacket;
-import net.wurstclient.WurstClient;
+import net.wurstclient.CmdClient;
 
 @Mixin(Screen.class)
 public abstract class ScreenMixin extends AbstractParentElement
@@ -36,7 +36,7 @@ public abstract class ScreenMixin extends AbstractParentElement
 			return;
 		
 		ChatMessageC2SPacket packet = new ChatMessageC2SPacket(message);
-		WurstClient.MC.getNetworkHandler().sendPacket(packet);
+		CmdClient.MC.getNetworkHandler().sendPacket(packet);
 		ci.cancel();
 	}
 	

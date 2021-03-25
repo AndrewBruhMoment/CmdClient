@@ -26,7 +26,7 @@ import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.snooper.SnooperListener;
 import net.minecraft.util.thread.ReentrantThreadExecutor;
-import net.wurstclient.WurstClient;
+import net.wurstclient.CmdClient;
 import net.wurstclient.event.EventManager;
 import net.wurstclient.events.LeftClickListener.LeftClickEvent;
 import net.wurstclient.events.RightClickListener.RightClickEvent;
@@ -50,7 +50,7 @@ public abstract class MinecraftClientMixin
 	
 	private Session wurstSession;
 	
-	private MinecraftClientMixin(WurstClient wurst, String string_1)
+	private MinecraftClientMixin(CmdClient wurst, String string_1)
 	{
 		super(string_1);
 	}
@@ -82,10 +82,10 @@ public abstract class MinecraftClientMixin
 	@Inject(at = {@At("HEAD")}, method = {"doItemPick()V"})
 	private void onDoItemPick(CallbackInfo ci)
 	{
-		if(!WurstClient.INSTANCE.isEnabled())
+		if(!CmdClient.INSTANCE.isEnabled())
 			return;
 		
-		HitResult hitResult = WurstClient.MC.crosshairTarget;
+		HitResult hitResult = CmdClient.MC.crosshairTarget;
 		if(hitResult == null || hitResult.getType() != HitResult.Type.ENTITY)
 			return;
 		

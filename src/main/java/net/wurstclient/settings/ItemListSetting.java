@@ -21,7 +21,7 @@ import com.google.gson.JsonElement;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import net.wurstclient.WurstClient;
+import net.wurstclient.CmdClient;
 import net.wurstclient.clickgui.Component;
 import net.wurstclient.util.json.JsonException;
 import net.wurstclient.util.json.JsonUtils;
@@ -57,7 +57,7 @@ public abstract class ItemListSetting extends Setting
 		
 		itemNames.add(name);
 		Collections.sort(itemNames);
-		WurstClient.INSTANCE.saveSettings();
+		CmdClient.INSTANCE.saveSettings();
 	}
 	
 	public void remove(int index)
@@ -66,14 +66,14 @@ public abstract class ItemListSetting extends Setting
 			return;
 		
 		itemNames.remove(index);
-		WurstClient.INSTANCE.saveSettings();
+		CmdClient.INSTANCE.saveSettings();
 	}
 	
 	public void resetToDefaults()
 	{
 		itemNames.clear();
 		itemNames.addAll(Arrays.asList(defaultNames));
-		WurstClient.INSTANCE.saveSettings();
+		CmdClient.INSTANCE.saveSettings();
 	}
 	
 	@Override

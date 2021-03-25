@@ -44,7 +44,7 @@ import net.wurstclient.settings.SettingsFile;
 import net.wurstclient.update.WurstUpdater;
 import net.wurstclient.util.json.JsonException;
 
-public enum WurstClient
+public enum CmdClient
 {
 	INSTANCE;
 	

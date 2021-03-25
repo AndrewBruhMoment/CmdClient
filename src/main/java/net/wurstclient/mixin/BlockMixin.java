@@ -18,7 +18,7 @@ import net.minecraft.item.ItemConvertible;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.BlockView;
-import net.wurstclient.WurstClient;
+import net.wurstclient.CmdClient;
 import net.wurstclient.event.EventManager;
 import net.wurstclient.events.ShouldDrawSideListener.ShouldDrawSideEvent;
 import net.wurstclient.hack.HackList;

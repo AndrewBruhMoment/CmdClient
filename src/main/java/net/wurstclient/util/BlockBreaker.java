@@ -19,14 +19,14 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.Vec3i;
 import net.minecraft.util.shape.VoxelShape;
-import net.wurstclient.WurstClient;
+import net.wurstclient.CmdClient;
 
 public enum BlockBreaker
 {
 	;
 	
-	private static final WurstClient WURST = WurstClient.INSTANCE;
-	private static final MinecraftClient MC = WurstClient.MC;
+	private static final CmdClient CMD = CmdClient.INSTANCE;
+	private static final MinecraftClient MC = CmdClient.MC;
 	
 	public static boolean breakOneBlock(BlockPos pos)
 	{
@@ -81,7 +81,7 @@ public enum BlockBreaker
 			side = sides[0];
 		
 		// face block
-		WURST.getRotationFaker().faceVectorPacket(hitVecs[side.ordinal()]);
+		CMD.getRotationFaker().faceVectorPacket(hitVecs[side.ordinal()]);
 		
 		// damage block
 		if(!MC.interactionManager.updateBlockBreakingProgress(pos, side))

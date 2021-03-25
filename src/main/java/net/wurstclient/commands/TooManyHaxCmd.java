@@ -95,7 +95,7 @@ public final class TooManyHaxCmd extends Command
 		if(!feature.isSafeToBlock())
 			throw new CmdError("The " + typeAndName + " is not safe to block.");
 		
-		TooManyHaxHack tooManyHax = WURST.getHax().tooManyHaxHack;
+		TooManyHaxHack tooManyHax = CMD.getHax().tooManyHaxHack;
 		if(tooManyHax.isBlocked(feature))
 		{
 			ChatUtils.error("The " + typeAndName + " is already blocked.");
@@ -119,7 +119,7 @@ public final class TooManyHaxCmd extends Command
 		Feature feature = parseFeature(name);
 		String typeAndName = getType(feature) + " '" + name + "'";
 		
-		TooManyHaxHack tooManyHax = WURST.getHax().tooManyHaxHack;
+		TooManyHaxHack tooManyHax = CMD.getHax().tooManyHaxHack;
 		if(!tooManyHax.isBlocked(feature))
 			throw new CmdError("The " + typeAndName + " is not blocked.");
 		
@@ -129,7 +129,7 @@ public final class TooManyHaxCmd extends Command
 	
 	private void blockAll()
 	{
-		WURST.getHax().tooManyHaxHack.blockAll();
+		CMD.getHax().tooManyHaxHack.blockAll();
 		ChatUtils.message("All* features blocked.");
 		ChatUtils
 			.message("*Note: A few features cannot be blocked because they");
@@ -138,13 +138,13 @@ public final class TooManyHaxCmd extends Command
 	
 	private void unblockAll()
 	{
-		WURST.getHax().tooManyHaxHack.unblockAll();
+		CMD.getHax().tooManyHaxHack.unblockAll();
 		ChatUtils.message("All features unblocked.");
 	}
 	
 	private Feature parseFeature(String name) throws CmdSyntaxError
 	{
-		Feature feature = WURST.getFeatureByName(name);
+		Feature feature = CMD.getFeatureByName(name);
 		if(feature == null)
 			throw new CmdSyntaxError(
 				"A feature named '" + name + "' could not be found");
@@ -171,7 +171,7 @@ public final class TooManyHaxCmd extends Command
 		if(args.length > 2)
 			throw new CmdSyntaxError();
 		
-		TooManyHaxHack tooManyHax = WURST.getHax().tooManyHaxHack;
+		TooManyHaxHack tooManyHax = CMD.getHax().tooManyHaxHack;
 		List<Feature> blocked = tooManyHax.getBlockedFeatures();
 		int page = parsePage(args);
 		int pages = (int)Math.ceil(blocked.size() / 8.0);
@@ -212,7 +212,7 @@ public final class TooManyHaxCmd extends Command
 		
 		try
 		{
-			WURST.getHax().tooManyHaxHack.loadProfile(name);
+			CMD.getHax().tooManyHaxHack.loadProfile(name);
 			ChatUtils.message("TooManyHax profile loaded: " + name);
 			
 		}catch(NoSuchFileException e)
@@ -241,7 +241,7 @@ public final class TooManyHaxCmd extends Command
 		
 		try
 		{
-			WURST.getHax().tooManyHaxHack.saveProfile(name);
+			CMD.getHax().tooManyHaxHack.saveProfile(name);
 			ChatUtils.message("TooManyHax profile saved: " + name);
 			
 		}catch(IOException | JsonException e)

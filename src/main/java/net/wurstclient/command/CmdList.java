@@ -24,11 +24,14 @@ public final class CmdList
 	public final BindCmd bindCmd = new BindCmd();
 	public final ClearCmd clearCmd = new ClearCmd();
 	public final CopyItemCmd copyitemCmd = new CopyItemCmd();
+	public final DababyCmd dababyCmd = new DababyCmd();
 	public final DamageCmd damageCmd = new DamageCmd();
 	public final DropCmd dropCmd = new DropCmd();
 	public final EnabledHaxCmd enabledHaxCmd = new EnabledHaxCmd();
 	public final EnchantCmd enchantCmd = new EnchantCmd();
 	public final FeaturesCmd featuresCmd = new FeaturesCmd();
+	public final FullbrightCmd fullbrightCmd = new FullbrightCmd();
+	public final FulldarkCmd fulldarkCmd = new FulldarkCmd();
 	public final GetPosCmd getPosCmd = new GetPosCmd();
 	public final GiveCmd giveCmd = new GiveCmd();
 	public final GmCmd gmCmd = new GmCmd();

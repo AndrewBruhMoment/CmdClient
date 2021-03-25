@@ -19,7 +19,7 @@ import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.item.MiningToolItem;
 import net.minecraft.item.ToolItem;
 import net.minecraft.item.ToolMaterial;
-import net.wurstclient.WurstClient;
+import net.wurstclient.CmdClient;
 import net.wurstclient.mixinterface.IMiningToolItem;
 
 @Mixin(MiningToolItem.class)
@@ -33,7 +33,7 @@ public class MiningToolItemMixin extends ToolItem implements IMiningToolItem
 	@Final
 	private Multimap<EntityAttribute, EntityAttributeModifier> attributeModifiers;
 	
-	private MiningToolItemMixin(WurstClient wurst, ToolMaterial material,
+	private MiningToolItemMixin(CmdClient wurst, ToolMaterial material,
 		Settings settings)
 	{
 		super(material, settings);

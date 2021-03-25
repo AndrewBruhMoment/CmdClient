@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import net.minecraft.client.render.RenderTickCounter;
-import net.wurstclient.WurstClient;
+import net.wurstclient.CmdClient;
 
 @Mixin(RenderTickCounter.class)
 public abstract class RenderTickCounterMixin

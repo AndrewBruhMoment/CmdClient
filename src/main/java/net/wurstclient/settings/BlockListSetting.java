@@ -21,7 +21,7 @@ import com.google.gson.JsonElement;
 import net.minecraft.block.Block;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import net.wurstclient.WurstClient;
+import net.wurstclient.CmdClient;
 import net.wurstclient.clickgui.Component;
 import net.wurstclient.util.BlockUtils;
 import net.wurstclient.util.json.JsonException;
@@ -57,7 +57,7 @@ public abstract class BlockListSetting extends Setting
 		
 		blockNames.add(name);
 		Collections.sort(blockNames);
-		WurstClient.INSTANCE.saveSettings();
+		CmdClient.INSTANCE.saveSettings();
 	}
 	
 	public void remove(int index)
@@ -66,14 +66,14 @@ public abstract class BlockListSetting extends Setting
 			return;
 		
 		blockNames.remove(index);
-		WurstClient.INSTANCE.saveSettings();
+		CmdClient.INSTANCE.saveSettings();
 	}
 	
 	public void resetToDefaults()
 	{
 		blockNames.clear();
 		blockNames.addAll(Arrays.asList(defaultNames));
-		WurstClient.INSTANCE.saveSettings();
+		CmdClient.INSTANCE.saveSettings();
 	}
 	
 	@Override

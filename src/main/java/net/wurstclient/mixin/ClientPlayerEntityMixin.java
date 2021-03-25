@@ -27,7 +27,7 @@ import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.network.packet.c2s.play.ChatMessageC2SPacket;
 import net.minecraft.util.math.Vec3d;
-import net.wurstclient.WurstClient;
+import net.wurstclient.CmdClient;
 import net.wurstclient.event.EventManager;
 import net.wurstclient.events.ChatOutputListener.ChatOutputEvent;
 import net.wurstclient.events.IsPlayerInWaterListener.IsPlayerInWaterEvent;
@@ -49,7 +49,7 @@ public class ClientPlayerEntityMixin extends AbstractClientPlayerEntity
 	@Shadow
 	private ClientPlayNetworkHandler networkHandler;
 	
-	public ClientPlayerEntityMixin(WurstClient wurst, ClientWorld clientWorld_1,
+	public ClientPlayerEntityMixin(CmdClient wurst, ClientWorld clientWorld_1,
 		GameProfile gameProfile_1)
 	{
 		super(clientWorld_1, gameProfile_1);

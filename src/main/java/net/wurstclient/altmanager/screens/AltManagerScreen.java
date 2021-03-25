@@ -32,7 +32,7 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
 import net.minecraft.util.math.MathHelper;
-import net.wurstclient.WurstClient;
+import net.wurstclient.CmdClient;
 import net.wurstclient.altmanager.*;
 import net.wurstclient.util.ListWidget;
 import net.wurstclient.util.MultiProcessingUtils;
@@ -232,7 +232,7 @@ public final class AltManagerScreen extends Screen
 		{
 			Process process = MultiProcessingUtils.startProcessWithIO(
 				ImportAltsFileChooser.class,
-				WurstClient.INSTANCE.getWurstFolder().toString());
+				CmdClient.INSTANCE.getWurstFolder().toString());
 			
 			Path path = getFileChooserPath(process);
 			process.waitFor();
@@ -285,7 +285,7 @@ public final class AltManagerScreen extends Screen
 		{
 			Process process = MultiProcessingUtils.startProcessWithIO(
 				ExportAltsFileChooser.class,
-				WurstClient.INSTANCE.getWurstFolder().toString());
+				CmdClient.INSTANCE.getWurstFolder().toString());
 			
 			Path path = getFileChooserPath(process);
 			

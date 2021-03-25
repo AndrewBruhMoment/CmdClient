@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.hud.InGameOverlayRenderer;
 import net.minecraft.client.util.math.MatrixStack;
-import net.wurstclient.WurstClient;
+import net.wurstclient.CmdClient;
 
 @Mixin(InGameOverlayRenderer.class)
 public class InGameOverlayRendererMixin

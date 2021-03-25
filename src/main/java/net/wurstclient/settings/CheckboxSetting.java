@@ -13,7 +13,7 @@ import java.util.Set;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonPrimitive;
 
-import net.wurstclient.WurstClient;
+import net.wurstclient.CmdClient;
 import net.wurstclient.clickgui.Component;
 import net.wurstclient.util.json.JsonUtils;
 
@@ -59,7 +59,7 @@ public abstract class CheckboxSetting extends Setting implements CheckboxLock
 		this.checked = checked;
 		update();
 		
-		WurstClient.INSTANCE.saveSettings();
+		CmdClient.INSTANCE.saveSettings();
 	}
 	
 	public final boolean isLocked()

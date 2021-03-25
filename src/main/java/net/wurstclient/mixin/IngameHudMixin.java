@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import net.minecraft.client.gui.DrawableHelper;
 import net.minecraft.client.gui.hud.InGameHud;
 import net.minecraft.client.util.math.MatrixStack;
-import net.wurstclient.WurstClient;
+import net.wurstclient.CmdClient;
 import net.wurstclient.event.EventManager;
 import net.wurstclient.events.GUIRenderListener.GUIRenderEvent;
 
@@ -30,7 +30,7 @@ public class IngameHudMixin extends DrawableHelper
 	private void onRender(MatrixStack matrixStack, float partialTicks,
 		CallbackInfo ci)
 	{
-		if(WurstClient.MC.options.debugEnabled)
+		if(CmdClient.MC.options.debugEnabled)
 			return;
 		
 		GUIRenderEvent event = new GUIRenderEvent(matrixStack, partialTicks);

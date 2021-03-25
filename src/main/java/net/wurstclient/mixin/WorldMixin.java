@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
-import net.wurstclient.WurstClient;
+import net.wurstclient.CmdClient;
 
 @Mixin(World.class)
 public abstract class WorldMixin implements WorldAccess, AutoCloseable

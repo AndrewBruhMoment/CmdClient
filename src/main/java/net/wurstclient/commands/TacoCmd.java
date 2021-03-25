@@ -68,7 +68,7 @@ public final class TacoCmd extends Command
 	@Override
 	public void doPrimaryAction()
 	{
-		WURST.getCmdProcessor().process("taco");
+		CMD.getCmdProcessor().process("taco");
 	}
 	
 	@Override

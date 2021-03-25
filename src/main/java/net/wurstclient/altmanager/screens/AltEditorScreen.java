@@ -35,14 +35,14 @@ import net.minecraft.text.OrderedText;
 import net.minecraft.text.Style;
 import net.minecraft.text.Text;
 import net.minecraft.util.Util;
-import net.wurstclient.WurstClient;
+import net.wurstclient.CmdClient;
 import net.wurstclient.altmanager.AltRenderer;
 import net.wurstclient.altmanager.NameGenerator;
 
 public abstract class AltEditorScreen extends Screen
 {
 	private final Path skinFolder =
-		WurstClient.INSTANCE.getWurstFolder().resolve("skins");
+		CmdClient.INSTANCE.getWurstFolder().resolve("skins");
 	
 	protected final Screen prevScreen;
 	

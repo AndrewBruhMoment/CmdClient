@@ -40,6 +40,6 @@ public final class JumpCmd extends Command
 	@Override
 	public void doPrimaryAction()
 	{
-		WURST.getCmdProcessor().process("jump");
+		CMD.getCmdProcessor().process("jump");
 	}
 }

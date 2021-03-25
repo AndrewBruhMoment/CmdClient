@@ -14,12 +14,12 @@ import net.minecraft.client.gui.widget.AbstractPressableButtonWidget;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.text.Text;
-import net.wurstclient.WurstClient;
+import net.wurstclient.CmdClient;
 
 @Mixin(ButtonWidget.class)
 public abstract class ButtonWidgetMixin extends AbstractPressableButtonWidget
 {
-	public ButtonWidgetMixin(WurstClient wurst, int i, int j, int k, int l,
+	public ButtonWidgetMixin(CmdClient wurst, int i, int j, int k, int l,
 		Text text)
 	{
 		super(i, j, k, l, text);

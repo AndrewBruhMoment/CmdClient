@@ -39,6 +39,6 @@ public final class LeaveCmd extends Command
 	@Override
 	public void doPrimaryAction()
 	{
-		WURST.getCmdProcessor().process("leave");
+		CMD.getCmdProcessor().process("leave");
 	}
 }

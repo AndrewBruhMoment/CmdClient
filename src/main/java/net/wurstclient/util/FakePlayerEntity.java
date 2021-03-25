@@ -13,16 +13,16 @@ import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.player.PlayerEntity;
-import net.wurstclient.WurstClient;
+import net.wurstclient.CmdClient;
 
 public class FakePlayerEntity extends OtherClientPlayerEntity
 {
-	private final ClientPlayerEntity player = WurstClient.MC.player;
-	private final ClientWorld world = WurstClient.MC.world;
+	private final ClientPlayerEntity player = CmdClient.MC.player;
+	private final ClientWorld world = CmdClient.MC.world;
 	
 	public FakePlayerEntity()
 	{
-		super(WurstClient.MC.world, WurstClient.MC.player.getGameProfile());
+		super(CmdClient.MC.world, CmdClient.MC.player.getGameProfile());
 		copyPositionAndRotation(player);
 		
 		copyInventory();

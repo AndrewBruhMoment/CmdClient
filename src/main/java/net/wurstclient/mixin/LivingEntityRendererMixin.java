@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 import net.minecraft.client.render.entity.LivingEntityRenderer;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.wurstclient.WurstClient;
+import net.wurstclient.CmdClient;
 
 @Mixin(LivingEntityRenderer.class)
 public abstract class LivingEntityRendererMixin

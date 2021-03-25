@@ -23,7 +23,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.resource.SynchronousResourceReloadListener;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
-import net.wurstclient.WurstClient;
+import net.wurstclient.CmdClient;
 import net.wurstclient.event.EventManager;
 import net.wurstclient.events.CameraTransformViewBobbingListener.CameraTransformViewBobbingEvent;
 import net.wurstclient.events.HitResultRayTraceListener.HitResultRayTraceEvent;

@@ -23,7 +23,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.text.Text;
 import net.minecraft.util.math.Matrix4f;
-import net.wurstclient.WurstClient;
+import net.wurstclient.CmdClient;
 
 @Mixin(EntityRenderer.class)
 public abstract class EntityRendererMixin<T extends Entity>
@@ -68,7 +68,7 @@ public abstract class EntityRendererMixin<T extends Entity>
 		
 		float scale = 0.025F;
 		
-		double distance = WurstClient.MC.player.distanceTo(entity);
+		double distance = CmdClient.MC.player.distanceTo(entity);
 			
 		if(distance > 10)
 			scale *= distance / 10;
@@ -76,7 +76,7 @@ public abstract class EntityRendererMixin<T extends Entity>
 		matrixStack.scale(-scale, -scale, scale);
 		
 		Matrix4f matrix4f = matrixStack.peek().getModel();
-		float g = WurstClient.MC.options.getTextBackgroundOpacity(0.25F);
+		float g = CmdClient.MC.options.getTextBackgroundOpacity(0.25F);
 		int k = (int)(g * 255.0F) << 24;
 		
 		TextRenderer textRenderer = this.getFontRenderer();

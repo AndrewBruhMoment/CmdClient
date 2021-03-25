@@ -18,7 +18,7 @@ import net.minecraft.client.gui.screen.DirectConnectScreen;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.network.ServerInfo;
 import net.minecraft.text.Text;
-import net.wurstclient.WurstClient;
+import net.wurstclient.CmdClient;
 import net.wurstclient.util.LastServerRememberer;
 
 @Mixin(DirectConnectScreen.class)
@@ -28,7 +28,7 @@ public class DirectConnectScreenMixin extends Screen
 	@Final
 	private ServerInfo serverEntry;
 	
-	private DirectConnectScreenMixin(WurstClient wurst, Text text_1)
+	private DirectConnectScreenMixin(CmdClient wurst, Text text_1)
 	{
 		super(text_1);
 	}

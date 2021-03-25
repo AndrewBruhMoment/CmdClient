@@ -21,7 +21,7 @@ import java.util.stream.Stream;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonPrimitive;
 
-import net.wurstclient.WurstClient;
+import net.wurstclient.CmdClient;
 import net.wurstclient.clickgui.Component;
 import net.wurstclient.util.json.JsonException;
 import net.wurstclient.util.json.JsonUtils;
@@ -36,7 +36,7 @@ public abstract class FileSetting extends Setting
 		Consumer<Path> createDefaultFiles)
 	{
 		super(name, description);
-		folder = WurstClient.INSTANCE.getWurstFolder().resolve(folderName);
+		folder = CmdClient.INSTANCE.getWurstFolder().resolve(folderName);
 		this.createDefaultFiles = createDefaultFiles;
 		setSelectedFileToDefault();
 	}
@@ -65,7 +65,7 @@ public abstract class FileSetting extends Setting
 			return;
 		
 		this.selectedFile = selectedFile;
-		WurstClient.INSTANCE.saveSettings();
+		CmdClient.INSTANCE.saveSettings();
 	}
 	
 	private void setSelectedFileToDefault()
@@ -112,7 +112,7 @@ public abstract class FileSetting extends Setting
 			}
 		
 		setSelectedFileToDefault();
-		WurstClient.INSTANCE.saveSettings();
+		CmdClient.INSTANCE.saveSettings();
 	}
 	
 	public ArrayList<Path> listFiles()

@@ -15,17 +15,17 @@ import java.util.Objects;
 import net.minecraft.util.crash.CrashException;
 import net.minecraft.util.crash.CrashReport;
 import net.minecraft.util.crash.CrashReportSection;
-import net.wurstclient.WurstClient;
+import net.wurstclient.CmdClient;
 
 public final class EventManager
 {
-	private final WurstClient wurst;
+	private final CmdClient cmd;
 	private final HashMap<Class<? extends Listener>, ArrayList<? extends Listener>> listenerMap =
 		new HashMap<>();
 	
-	public EventManager(WurstClient wurst)
+	public EventManager(CmdClient cmd)
 	{
-		this.wurst = wurst;
+		this.cmd = cmd;
 	}
 	
 	/**
@@ -35,7 +35,7 @@ public final class EventManager
 	 */
 	public static <L extends Listener, E extends Event<L>> void fire(E event)
 	{
-		EventManager eventManager = WurstClient.INSTANCE.getEventManager();
+		EventManager eventManager = CmdClient.INSTANCE.getEventManager();
 		if(eventManager == null)
 			return;
 		
@@ -44,7 +44,7 @@ public final class EventManager
 	
 	private <L extends Listener, E extends Event<L>> void fireImpl(E event)
 	{
-		if(!wurst.isEnabled())
+		if(!cmd.isEnabled())
 			return;
 		
 		try
