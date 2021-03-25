@@ -2,7 +2,7 @@
 
 ## Downloads (for users)
 
-This project is not finnished.
+This project is not finished.
 
 ## Setup (for developers) (using Windows 10 & Eclipse)
 
@@ -14,6 +14,10 @@ This project is not finnished.
 ```
 
 2. In Eclipse, go to `Import...` > `Existing Projects into Workspace` and select this project.
+
+## Known Bugs
+`.Dababy <off>` Does not do anything.
+Everything looks gross and horrible and terrible.
 
 ## License
 
