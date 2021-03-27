@@ -2,7 +2,7 @@
 
 ## Downloads (for users)
 
-This project is not finished.
+[First Alpha Release v0.2.3](https://github.com/AndrewBruhMoment/CmdClient/releases/tag/v0.2.3-alpha)
 
 ## Setup (for developers) (using Windows 10 & Eclipse)
 
