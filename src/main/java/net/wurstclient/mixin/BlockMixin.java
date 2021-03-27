@@ -18,10 +18,9 @@ import net.minecraft.item.ItemConvertible;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.BlockView;
-import net.wurstclient.CmdClient;
+import net.wurstclient.commands.SlideCmd;
 import net.wurstclient.event.EventManager;
 import net.wurstclient.events.ShouldDrawSideListener.ShouldDrawSideEvent;
-import net.wurstclient.hack.HackList;
 
 @Mixin(Block.class)
 public abstract class BlockMixin implements ItemConvertible
@@ -48,6 +47,20 @@ public abstract class BlockMixin implements ItemConvertible
 		if(cir.getReturnValueF() < 1)
 			cir.setReturnValue(1F);
 		
-			return;
+		return;
+	}
+	
+	@Inject(at = {@At("HEAD")},
+		method = {"getSlipperiness()F"},
+		cancellable = true)
+	public float getSlipperiness(CallbackInfoReturnable<Float> cir)
+	{
+		if(SlideCmd.SlipperinessOverwrite == null)
+			SlideCmd.SlipperinessOverwrite = 0.6F;
+		
+		if(cir.getReturnValueF() <= 0.6)
+			cir.setReturnValue(SlideCmd.SlipperinessOverwrite);
+		
+		return SlideCmd.SlipperinessOverwrite;
 	}
 }
