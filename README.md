@@ -1,4 +1,4 @@
-# Cmd Client v0.2
+# Cmd Client v0.2.3
 
 ## Downloads (for users)
 
