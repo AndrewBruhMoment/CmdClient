@@ -14,6 +14,7 @@ import net.wurstclient.SearchTags;
 import net.wurstclient.command.CmdException;
 import net.wurstclient.command.CmdSyntaxError;
 import net.wurstclient.command.Command;
+import net.wurstclient.util.ChatUtils;
 
 @SearchTags({"dababy", "less go", "lets go", "suge"})
 public final class DababyCmd extends Command
@@ -350,6 +351,7 @@ public final class DababyCmd extends Command
 		"We in Suburbans back to back and we gon' fill 'em up with vibes"};
 	
 	Boolean toStop = false;
+	public static String threadRunnningDababy= "";
 	
 	@SuppressWarnings("static-access")
 	@Override
@@ -374,7 +376,7 @@ public final class DababyCmd extends Command
 		if(args[0].equalsIgnoreCase("off"))
 		{
 			toStop = true;
-		}
+		} else toStop = false;
 		
 		if(args[0].equalsIgnoreCase("suge"))
 		{
@@ -387,10 +389,17 @@ public final class DababyCmd extends Command
 					{
 						for(int i = 0; i < SugeSongSafe.length; i++)
 						{
+							if(toStop == true)
+							{
+								ChatUtils.message("Stopped");
+								threadRunnningDababy= "";
+								break;
+							}
 							String message = SugeSongSafe[i];
 							ChatMessageC2SPacket packet =
 								new ChatMessageC2SPacket(message);
 							MC.getNetworkHandler().sendPacket(packet);
+							threadRunnningDababy= "sugechat";
 							try
 							{
 								TimeUnit.MILLISECONDS.sleep(1500);
@@ -405,10 +414,17 @@ public final class DababyCmd extends Command
 					{
 						for(int i = 0; i < SugeSong.length; i++)
 						{
+							if(toStop == true)
+							{
+								ChatUtils.message("Stopped");
+								threadRunnningDababy= "";
+								break;
+							}
 							String message = SugeSong[i];
 							ChatMessageC2SPacket packet =
 								new ChatMessageC2SPacket(message);
 							MC.getNetworkHandler().sendPacket(packet);
+							threadRunnningDababy= "sugechat";
 							try
 							{
 								TimeUnit.MILLISECONDS.sleep(1500);
@@ -422,20 +438,6 @@ public final class DababyCmd extends Command
 				
 			};
 			sugechat.start();
-			if(toStop == true)
-			{
-				try
-				{
-					Thread.sleep(1);
-					
-					sugechat.interrupt();
-					
-					Thread.sleep(5);
-				}catch(InterruptedException e)
-				{
-					System.out.println("Caught:" + e);
-				}
-			}
 		}
 		if(args[0].equalsIgnoreCase("vibez"))
 		{
@@ -447,10 +449,17 @@ public final class DababyCmd extends Command
 					{
 						for(int i = 0; i < VibezSongSafe.length; i++)
 						{
+							if(toStop == true)
+							{
+								ChatUtils.message("Stopped");
+								threadRunnningDababy= "";
+								break;
+							}
 							String message = VibezSongSafe[i];
 							ChatMessageC2SPacket packet =
 								new ChatMessageC2SPacket(message);
 							MC.getNetworkHandler().sendPacket(packet);
+							threadRunnningDababy= "vibezchat";
 							try
 							{
 								TimeUnit.MILLISECONDS.sleep(1500);
@@ -465,10 +474,17 @@ public final class DababyCmd extends Command
 					{
 						for(int i = 0; i < VibezSong.length; i++)
 						{
+							if(toStop == true)
+							{
+								ChatUtils.message("Stopped");
+								threadRunnningDababy= "";
+								break;
+							}
 							String message = VibezSong[i];
 							ChatMessageC2SPacket packet =
 								new ChatMessageC2SPacket(message);
 							MC.getNetworkHandler().sendPacket(packet);
+							threadRunnningDababy= "vibezchat";
 							try
 							{
 								TimeUnit.MILLISECONDS.sleep(1500);
@@ -482,20 +498,6 @@ public final class DababyCmd extends Command
 				
 			};
 			vibezchat.start();
-			if(toStop == true)
-			{
-				try
-				{
-					Thread.sleep(1);
-					
-					vibezchat.interrupt();
-					
-					Thread.sleep(5);
-				}catch(InterruptedException e)
-				{
-					System.out.println("Caught:" + e);
-				}
-			}
 		}
 	}
 }

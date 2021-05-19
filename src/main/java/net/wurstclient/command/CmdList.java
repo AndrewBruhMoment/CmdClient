@@ -18,16 +18,13 @@ import net.wurstclient.commands.*;
 public final class CmdList
 {
 	public final AddAltCmd addAltCmd = new AddAltCmd();
-	public final AnnoyCmd annoyCmd = new AnnoyCmd();
 	public final AuthorCmd authorCmd = new AuthorCmd();
 	public final AutoChatCmd autoChatCmd = new AutoChatCmd();
-	public final BindCmd bindCmd = new BindCmd();
 	public final ClearCmd clearCmd = new ClearCmd();
 	public final CopyItemCmd copyitemCmd = new CopyItemCmd();
 	public final DababyCmd dababyCmd = new DababyCmd();
 	public final DamageCmd damageCmd = new DamageCmd();
 	public final DropCmd dropCmd = new DropCmd();
-	public final EnabledHaxCmd enabledHaxCmd = new EnabledHaxCmd();
 	public final EnchantCmd enchantCmd = new EnchantCmd();
 	public final FeaturesCmd featuresCmd = new FeaturesCmd();
 	public final FullbrightCmd fullbrightCmd = new FullbrightCmd();
@@ -51,11 +48,9 @@ public final class CmdList
 	public final SlideCmd slideCmd = new SlideCmd();
 	public final SpamCmd spamCmd = new SpamCmd();
 	public final TacoCmd tacoCmd = new TacoCmd();
-	public final TCmd tCmd = new TCmd();
 	public final TestCmd testCmd = new TestCmd();
 	public final TooManyHaxCmd tooManyHaxCmd = new TooManyHaxCmd();
 	public final TpCmd tpCmd = new TpCmd();
-	public final UnbindCmd unbindCmd = new UnbindCmd();
 	public final VClipCmd vClipCmd = new VClipCmd();
 	public final ViewNbtCmd viewNbtCmd = new ViewNbtCmd();
 	
