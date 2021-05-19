@@ -11,6 +11,8 @@ package io.github.andrewpopovdp.mixin;
 
 import org.spongepowered.asm.mixin.Mixin;
 
+import io.github.andrewpopovdp.CmdClient;
+import io.github.andrewpopovdp.hack.HackList;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.FluidBlock;
