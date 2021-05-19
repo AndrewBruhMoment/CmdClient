@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "net.wurstclient.mixin",
+  "package": "io.github.andrewpopovdp.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
   ],
