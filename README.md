@@ -16,7 +16,6 @@
 2. In Eclipse, go to `Import...` > `Existing Projects into Workspace` and select this project.
 
 ## Known Bugs
-`.Dababy <off>` Does not do anything.
 Everything looks gross and horrible and terrible.
 
 ## License
